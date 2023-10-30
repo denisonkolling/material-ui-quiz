@@ -1,3 +1,11 @@
+import {
+	CHANGE_AMOUNT,
+	CHANGE_CATEGORY,
+	CHANGE_DIFFICULTY,
+	CHANGE_SCORE,
+	CHANGE_TYPE,
+} from './actionsTypes';
+
 const initialState = {
 	question_category: '',
 	question_dificulty: '',
@@ -18,6 +26,8 @@ const reducer = (state = initialState, action) => {
 			return { ...state, amount_of_question: action.payload };
 		case CHANGE_SCORE:
 			return { ...state, score: action.payload };
+		default:
+			return state;
 	}
 };
 
