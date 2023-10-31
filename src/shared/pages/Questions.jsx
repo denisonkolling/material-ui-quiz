@@ -1,9 +1,10 @@
 import { Button, Typography, Box, CircularProgress } from '@mui/material';
 import React, { useEffect } from 'react';
 import useAxios from '../hooks/useAxios';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { handleScoreChange } from '../redux/actions';
 
 const Questions = () => {
 	const {
@@ -13,6 +14,7 @@ const Questions = () => {
 		amount_of_question,
 		score,
 	} = useSelector((state) => state);
+	const dispatch = useDispatch();
 
 	let apiUrl = `/api.php?amount=${amount_of_question}`;
 	if (question_category) {
@@ -51,7 +53,11 @@ const Questions = () => {
 		);
 	}
 
-	const handleClickAnswer = () => {
+	const handleClickAnswer = (e) => {
+		const question = response.results[questionIndex];
+		if (e.target.textContent === question.correct_answer) {
+			dispatch(handleScoreChange(score + 1));
+		}
 		if (questionIndex + 1 < response.results.length) {
 			setQuestionIndex(questionIndex + 1);
 		} else {
@@ -64,7 +70,7 @@ const Questions = () => {
 			<Typography variant="h4">Question {questionIndex + 1}</Typography>
 			<Typography mt={5}>
 				{response && response.results && response.results.length > 0
-					? response.results[0].question
+					? response.results[questionIndex].question
 					: null}
 			</Typography>
 			{options.map((data, id) => (
@@ -74,6 +80,7 @@ const Questions = () => {
 					</Button>
 				</Box>
 			))}
+			<Typography mt={2}>Score: {score} / {response.results.length}</Typography>
 		</Box>
 	);
 };
