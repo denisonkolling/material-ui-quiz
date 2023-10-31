@@ -4,7 +4,7 @@ import {
 	CHANGE_AMOUNT,
 	CHANGE_TYPE,
 	CHANGE_SCORE,
-} from './actionsType';
+} from './actionsTypes';
 
 export const handleCategoryChange = (payload) => ({
 	type: CHANGE_CATEGORY,

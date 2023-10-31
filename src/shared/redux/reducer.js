@@ -8,7 +8,7 @@ import {
 
 const initialState = {
 	question_category: '',
-	question_dificulty: '',
+	question_difficulty: '',
 	question_type: '',
 	amount_of_question: 50,
 	score: 0,
@@ -19,7 +19,7 @@ const reducer = (state = initialState, action) => {
 		case CHANGE_CATEGORY:
 			return { ...state, question_category: action.payload };
 		case CHANGE_DIFFICULTY:
-			return { ...state, question_dificulty: action.payload };
+			return { ...state, question_difficulty: action.payload };
 		case CHANGE_TYPE:
 			return { ...state, question_type: action.payload };
 		case CHANGE_AMOUNT:
