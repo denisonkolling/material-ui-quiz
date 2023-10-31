@@ -7,7 +7,7 @@ const TextFieldComp = () => {
 
 	const dispatch = useDispatch();
 	const handleChange = (e) => {
-		dispatch(handleAmountChange())
+		dispatch(handleAmountChange(e.target.value))
 	};
 
 	return (
