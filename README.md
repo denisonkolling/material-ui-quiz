@@ -21,19 +21,19 @@ Web Application develop to provide a quiz game interface using [Open Trivia Data
 ### 1. Setup Page
   <br/>
       <p align="center">
-        <img alt="setup-screen" src='./screenshot/screen1.png' width="35%">
+        <img alt="setup-screen" src='./screenshot/screen1.PNG' width="35%">
       </p>
      
 ### 2. Question Page
   <br/>
       <p align="center">
-        <img alt="setup-screen" src='./screenshot/screen2.png' width="35%">
+        <img alt="setup-screen" src='./screenshot/screen2.PNG' width="35%">
       </p>  
    
 ### 3. Final Score Page
   <br/>
       <p align="center">
-        <img alt="setup-screen" src='./screenshot/screen3.png' width="35%">
+        <img alt="setup-screen" src='./screenshot/screen3.PNG' width="35%">
       </p>
 
 ---
