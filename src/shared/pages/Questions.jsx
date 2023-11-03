@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { handleScoreChange } from '../redux/actions';
+import { decode } from 'html-entities';
 
 const Questions = () => {
 	const {
@@ -70,13 +71,13 @@ const Questions = () => {
 			<Typography variant="h4">Question {questionIndex + 1}</Typography>
 			<Typography mt={5}>
 				{response && response.results && response.results.length > 0
-					? response.results[questionIndex].question
+					? decode(response.results[questionIndex].question)
 					: null}
 			</Typography>
 			{options.map((data, id) => (
 				<Box mt={2} key={id}>
 					<Button onClick={handleClickAnswer} variant="contained">
-						{data}
+						{decode(data)}
 					</Button>
 				</Box>
 			))}
