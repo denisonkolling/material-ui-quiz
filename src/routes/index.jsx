@@ -9,6 +9,7 @@ const RoutesApp = () => {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Setup />} />
+      <Route path="/start" element={<Setup />} />
       <Route path="/questions" element={<Questions />} />
       <Route path="/score" element={<FinalScore />} />
       </Routes>
